@@ -58,7 +58,7 @@ class XcodeBuildTimer
       return
     end
 
-    project.native_targets.each do |target|
+    project.targets.each do |target|
       start_target = target.shell_script_build_phases.find {|phase| phase.name == 'Timing START' }
       start_target.remove_from_project if start_target
 
